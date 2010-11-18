@@ -5,8 +5,9 @@
 /**
  * Network object used when communicating to the server
  * This is used often to submit incremental and final score
+ * Also used for synching player's action to the server
  */
-var GameNetwork = {
+var HormazdNetwork = {
 	/**
 	 * Sync timer
 	 *
@@ -53,30 +54,31 @@ var GameNetwork = {
 	{
 		if (!this.isSynced || !this.isRegistered)
 		{
-			GameNetwork.isSynced = false;
-			GameNetwork.stopSync();
+			this.isSynced = false;
+			this.stopSync();
 			alert("You are out of sync from the sever. Your score will not be submitted.");
 			return false;
 		}
 		
-		// set as not sync
+		// Set as not sync
 		this.isSynced = false;
 		var url = this.serverUrl + 'ping/' + this.token + "/" + GamePlay.score;
 
 		$.getJSON(url, function(data){
 			if (data.token)
 			{
-				GameNetwork.isSynced = true;
-				GameNetwork.token = data.token;
-				// resync
-				clearInterval(GameNetwork.timer);
-				GameNetwork.previousTimestamp = new Date().getTime();
-				GameNetwork.timer = setTimeout("GameNetwork.ping()", GameNetwork.syncInterval);
+				HormazdNetwork.isSynced = true;
+				HormazdNetwork.token = data.token;
+				
+				// Resync
+				clearInterval(HormazdNetwork.timer);
+				HormazdNetwork.previousTimestamp = new Date().getTime();
+				HormazdNetwork.timer = setTimeout("HormazdNetwork.ping()", HormazdNetwork.syncInterval);
 			}
 			else
 			{
-				GameNetwork.isSynced = false;
-				GameNetwork.stopSync();
+				HormazdNetwork.isSynced = false;
+				HormazdNetwork.stopSync();
 				alert("You are out of sync from the sever. Your score will not be submitted.");
 			}
 		});
@@ -92,16 +94,17 @@ var GameNetwork = {
 		$.getJSON(this.serverUrl + "register", function(data){
 			if (data.token)
 			{
-				GameNetwork.isRegistered = true;
-				GameNetwork.isSynced = true;
-				GameNetwork.token = data.token;
-				GameNetwork.previousTimestamp = new Date().getTime();
-				// start synching
-				GameNetwork.timer = setTimeout("GameNetwork.ping()", GameNetwork.syncInterval);
+				HormazdNetwork.isRegistered = true;
+				HormazdNetwork.isSynced = true;
+				HormazdNetwork.token = data.token;
+				HormazdNetwork.previousTimestamp = new Date().getTime();
+
+				// Start synching
+				HormazdNetwork.timer = setTimeout("HormazdNetwork.ping()", HormazdNetwork.syncInterval);
 			}
 			else
 			{
-				GameNetwork.stopSync();
+				HormazdNetwork.stopSync();
 				alert("Network problem: Cannot register your game session.");
 			}
 		});
@@ -120,6 +123,9 @@ var GameNetwork = {
 	
 	/**
 	 * Submits score
+	 * 
+	 * @todo Make this method indenpendent of the game setup
+	 * Perhaps making this one a callback or something
 	 */
 	submitScore: function()
 	{
