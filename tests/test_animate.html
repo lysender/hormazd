@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+<title>Test - Animation</title> 
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<!-- Required script lib -->  
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+
+<!--  page script -->
+<script type="text/javascript">
+	$(function(){
+		$("#top").click(move_cell_top);
+
+		$("#bottom").click(move_cell_bottom);
+
+		$("#left").click(move_cell_left);
+
+		$("#right").click(move_cell_right);
+	});
+
+	function move_cell_top()
+	{
+		$("#floating-cell").animate({"top": "-=62px"}, "fast");
+	}
+
+	function move_cell_bottom()
+	{
+		$("#floating-cell").animate({"top": "+=62px"}, "fast");
+	}
+
+	function move_cell_left()
+	{
+		$("#floating-cell").animate({"left": "-=62px"}, "fast");
+	}
+
+	function move_cell_right()
+	{
+		$("#floating-cell").animate({"left": "+=62px"}, "fast");
+	}
+</script>
+
+<link rel="stylesheet" type="text/css" href="../css/threeinarow.css" />
+
+<!-- Some minimal styles -->
+<style type="text/css">
+	.clearer { clear: both; }
+	input[type='button'] { width: 70px; }
+	#top, #bottom { margin-left: 35px; }
+</style>
+</head> 
+
+<body>
+<h1>Testing jQuery Animation</h1>
+<hr />
+<div class="controls">
+	<input type="button" name="top" id="top" value="Top" /><br />
+	<input type="button" name="left" id="left" value="Left" />
+	<input type="button" name="right" id="right" value="Right" /><br />
+	<input type="button" name="bottom" id="bottom" value="Bottom" />
+</div>
+<div id="floating-cell" class="theme-default" style="width: 62px; height: 62px; position: absolute;">
+	<div class="cell-w">
+		<div class="cell cell-2">&nbsp;</div>
+	</div>
+</div>
+<div class="clearer"></div>
+<div class="game-w theme-xdefault">
+	<div class="game-content">
+		<a name="game_start"></a>
+						<div id="cell_row_0" class="cell-row">
+						<div id="cell_0_0" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_0_1" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_0_2" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_0_3" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_0_4" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_0_5" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_0_6" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_0_7" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_0_8" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_0_9" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_1" class="cell-row">
+						<div id="cell_1_0" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_1_1" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_1_2" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_1_3" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_1_4" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_1_5" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_1_6" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_1_7" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_1_8" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_1_9" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_2" class="cell-row">
+						<div id="cell_2_0" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_2_1" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_2_2" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_2_3" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_2_4" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_2_5" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_2_6" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_2_7" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_2_8" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_2_9" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_3" class="cell-row">
+						<div id="cell_3_0" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_3_1" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_3_2" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_3_3" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_3_4" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_3_5" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_3_6" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_3_7" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_3_8" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_3_9" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_4" class="cell-row">
+						<div id="cell_4_0" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_4_1" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_4_2" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_4_3" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_4_4" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_4_5" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_4_6" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_4_7" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_4_8" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_4_9" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_5" class="cell-row">
+						<div id="cell_5_0" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_5_1" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_5_2" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_5_3" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_5_4" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_5_5" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_5_6" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_5_7" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_5_8" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_5_9" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_6" class="cell-row">
+						<div id="cell_6_0" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_6_1" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_6_2" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_6_3" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_6_4" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_6_5" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_6_6" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_6_7" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_6_8" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_6_9" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_7" class="cell-row">
+						<div id="cell_7_0" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_7_1" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_7_2" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_7_3" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_7_4" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_7_5" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_7_6" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_7_7" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_7_8" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_7_9" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_8" class="cell-row">
+						<div id="cell_8_0" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_8_1" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_8_2" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_8_3" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_8_4" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_8_5" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_8_6" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_8_7" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+						<div id="cell_8_8" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_8_9" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+					</div>
+				<div id="cell_row_9" class="cell-row">
+						<div id="cell_9_0" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_9_1" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_9_2" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_9_3" class="cell-w"><div class="cell cell-0">&nbsp;</div></div>
+						<div id="cell_9_4" class="cell-w"><div class="cell cell-1">&nbsp;</div></div>
+						<div id="cell_9_5" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_9_6" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_9_7" class="cell-w"><div class="cell cell-4">&nbsp;</div></div>
+						<div id="cell_9_8" class="cell-w"><div class="cell cell-3">&nbsp;</div></div>
+						<div id="cell_9_9" class="cell-w"><div class="cell cell-2">&nbsp;</div></div>
+					</div>
+				<div class="clearer"></div>
+	</div>
+</div>
+</body>
+</html>

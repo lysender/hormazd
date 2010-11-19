@@ -1,0 +1,85 @@
+/**
+ * CSS file for the Three-In-A-Row game
+ *
+ * @author Lysender http://lysender.co.cc
+ * @see http://lysender.co.cc/
+ */
+
+.game-w {
+	padding-bottom: 10px;
+}
+.game-content {
+	float: left;
+	width: 620px;
+	border: solid 1px #F00;
+}
+.game-control {
+	float: right;
+	width: 300px;
+	font-size: 1.5em;
+}
+.game-control ul,
+.game-control ul li {
+	font-size: 0.9em;
+}
+.cell-row {
+	clear: both;
+}
+
+/** Cell styles **/
+.cell-w {
+	float: left;
+	width: 62px;
+	height: 62px;
+	background-color: #1f1f1f;
+}
+.cell {
+	float: left;
+	width: 60px;
+	height: 60px;
+	border: solid 1px #000;
+}
+.cell-row .cell-w .cell-selected,
+.theme-default .cell-row .cell-w .cell-selected {
+	border: solid 1px #f7f967;
+}
+
+/** Theme specific styles **/
+.theme-default .cell {
+	border: solid 1px #1f1f1f;
+}
+.theme-default .cell-0 {
+	background: transparent url(../img/threeinarow/default/cell-0.png) no-repeat center center;
+}
+.theme-default .cell-1 {
+	background: transparent url(../img/threeinarow/default/cell-1.png) no-repeat center center;
+}
+.theme-default .cell-2 {
+	background: transparent url(../img/threeinarow/default/cell-2.png) no-repeat center center;
+}
+.theme-default .cell-3 {
+	background: transparent url(../img/threeinarow/default/cell-3.png) no-repeat center center;
+}
+.theme-default .cell-4 {
+	background: transparent url(../img/threeinarow/default/cell-4.png) no-repeat center center;
+}
+
+/** Submit score **/
+#submit_score {
+	padding-top: 10px;
+}
+#submit_score p {
+	font-size: 0.8em;
+}
+
+ol li {
+	list-style-type: decimal;
+}
+ul {
+	margin:1em 0 1em 2em;
+	padding:0;
+}
+ul li {
+	list-style-type: disc;
+	text-indent:0;
+}
