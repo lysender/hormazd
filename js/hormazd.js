@@ -1,5 +1,8 @@
 /** 
  * Hormazd - JavaScript Game Library
+ * 
+ * @requires jQuery
+ * @requires jquery.sha256.js
  */
 
 /**
@@ -153,4 +156,3 @@ var HormazdNetwork = {
 		);
 	}
 };
-

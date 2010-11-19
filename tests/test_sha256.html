@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+<title>Test - SHA256 HMAC</title> 
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<!-- Required script lib -->  
+<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../js/jquery.sha256.js"></script>
+
+<!--  page script -->
+<script type="text/javascript">
+	$(function(){
+		
+		$("#process").click(function(){
+			// Validate
+			var input = $("#raw_string").val();
+			input = $.trim(input);
+
+			if (input.length == 0)
+			{
+				alert("Enter an input string first");
+				$("#raw_string").focus();
+				
+				return;
+			}
+			
+			// Process sha256
+			var sha256 = $.sha256(input);
+			$("#sha256").val(sha256);
+			
+			// Process hmac sha256
+			var secret = $("#secret_key").val();
+			secret = $.trim(secret);
+
+			if (secret.length == 0)
+			{
+				alert("No secret key is entered for hmac hashing");
+				$("#secret_key").focus();
+
+				return;
+			}
+
+			var hmac = $.sha256hmac(secret, input);
+			$("#hmac_sha256").val(hmac);
+		});
+		
+	});
+</script>
+
+<!-- Some minimal styles -->
+<style type="text/css">
+	p { float: left; width: 100%; }
+	span { float: left; width: 180px; }
+	input[type='text'] { float: left; width: 520px; font-family: "courier new", mono; }
+	input#process { margin-left: 180px; }
+</style>
+</head> 
+
+<body>
+<h1>Testing HMAC and SHA256 jQuery lib</h1>
+<hr />
+<form action="" method="post" enctype="multipart/form-data">
+	<p>
+		<span>Input string:</span> <input type="text" name="raw_string" id="raw_string" /><br />
+		<br />
+		<span>Key used in HMAC:</span> <input type="text" name="secret_key" id="secret_key" value="gAcCNWHM4ysWyhYTHF8kygWfoTu2bq9L" /><br />
+		<br />
+		<input type="button" name="process" id="process" value="Calculate hash" /><br />
+		<br />
+		<span>SHA256 hash:</span> <input type="text" name="sha256" id="sha256" /><br />
+		<br />
+		<span>HMAC_SHA256 hash:</span> <input type="text" name="hmac_sha256" id="hmac_sha256" /><br />
+		<br />		
+	</p>
+</form>
+</body>
+</html>
