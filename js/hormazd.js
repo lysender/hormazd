@@ -5,6 +5,34 @@
  * @requires jquery.sha256.js
  */
 
+/** 
+ * Random helper for numbers and list / arrays
+ * 
+ */
+var HormazdRandom = {
+	/** 
+	 * Returns a random set of n number of indices
+	 * from a list (array). This makes an assumption
+	 * that list has a sorted numeric keys from 0 - {length -1}
+	 * 
+	 * If duplicate is specified, it allows x number of duplicate
+	 * for a single value where x is the value of duplicate
+	 * 
+	 * @param Array list
+	 * @param int n
+	 * @param int duplicate
+	 * 
+	 * @return Array
+	 */
+	getFromList: function(list, n, duplicate)
+	{
+		var listCopy = list;
+		var upperBound = listCopy.length - 1;
+		
+		
+	}
+};
+
 /**
  * Network object used when communicating to the server
  * This is used often to submit incremental and final score
